@@ -9,7 +9,7 @@ from datetime import datetime, timedelta
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'channels_celery_project.settings')
 
-app = Celery('channels_celery_heroku_project')
+app = Celery('channels_celery_project')
 app.conf.enable_utc = False
 app.conf.update(timezone='Asia/Kolkata')
 
