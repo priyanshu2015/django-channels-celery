@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from channels.layers import get_channel_layer
+import json
 # Create your views here.
 from django.template import RequestContext
 def home(request):
@@ -14,7 +15,7 @@ def test(request):
         "notification_broadcast",
         {
             'type': 'send_notification',
-            'message': "Notification"
+            'message': json.dumps("Notification")
         }
     )
     return HttpResponse("Done")
